@@ -1,46 +1,64 @@
-+++
-draft = true
-date = "{{ .Date }}"
-publishdate = "{{ .Date }}"
+---
+author:
+  - name: Pedro Torres
+  - homepage: https://absolutearray.com/
 
-title = "{{ replace .Name "-" " " | title }}"
+title: "{{ replace .Name "-" " " | title }}"
 
-description = ""
+draft: true
+date: {{ .Date }}
+publishdate: "{{ .Date }}"
+description: ""
+summary: ""
 
-summary = ""
+tags:
+  - a
+  - b
+  - c
 
-tags = []
 
-keywords = []
+keywords:
+  - A
+  - B
+  - C
 
-categories = []
+# taxonomies
+categories:
+  - A
+  - B
+  - C
 
-[amp]
-    elements = []
+amp:
+  elements:
+  - A
+  - B
+  - C
 
-[author]
-    name = ""
-    homepage = ""
+image:
+ src:
 
-[image]
-    src = ""
+ogp:
+  title:
+  url:
+  description:
+  image:
+  site:
 
-[ogp]
-    title = ""
-    url = ""
-    description = ""
-    image = ""
-    site = ""
+twitter
+    title: ""
+    url: ""
+    description: ""
+    image: ""
+    site: ""
 
-[twitter]
-    title = ""
-    url = ""
-    description = ""
-    image = ""
-    site = ""
+sitemap
+    changefreq: weekly
+    priority: 0.5
+    filename: sitemap.xml
 
-[sitemap]
-    changefreq = "monthly"
-    priority = 0.5
-    filename = "sitemap.xml"
-+++
+# next article
+series: ["xxx"]
+next: xxx
+---
+
+CONTENT
