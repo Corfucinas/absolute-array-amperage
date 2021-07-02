@@ -9,7 +9,7 @@
 
 <meta name="description" content="{{if .IsHome}}{{ .Site.Params.Description }}{{else}}{{.Description}}{{end}}" />
 <link rel="canonical" href="{{ .Permalink }}">
-<link rel="sitemap" type="application/xml" title="Sitemap" href="{{ ;sitemap.xml' | absURL }}">
+<link rel="sitemap" type="application/xml" title="Sitemap" href="{{ 'sitemap.xml' | absURL }}">
 
 {{ "<!--Search Engine Crawler Tags-->" | safeHTML }}
 <meta name="robots" content="index,follow">
