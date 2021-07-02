@@ -1,6 +1,6 @@
 {
-    "trackPageview": {
-        "on": "visible",
-        "request": "pageview"
-    }
+  "trackPageview": {
+    "on": "visible",
+    "request": "pageview"
+  }
 }

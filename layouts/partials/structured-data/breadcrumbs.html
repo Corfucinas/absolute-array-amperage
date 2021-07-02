@@ -3,11 +3,11 @@
 
 {{ $.Scratch.Add "breadcrumb" (slice (dict "url" .Site.BaseURL "name" (i18n "home"))) }}
 {{ range $index, $element := split $url "/" }}
-  {{ $.Scratch.Add "path" $element }}
-  {{ $.Scratch.Add "path" "/" }}
-  {{ if ne $element "" }}
-    {{ $.Scratch.Add "breadcrumb" (slice (dict "url" ($.Scratch.Get "path") "name" (humanize (replace . "-" " ")))) }}
-  {{ end }}
+{{ $.Scratch.Add "path" $element }}
+{{ $.Scratch.Add "path" "/" }}
+{{ if ne $element "" }}
+{{ $.Scratch.Add "breadcrumb" (slice (dict "url" ($.Scratch.Get "path") "name" (humanize (replace . "-" " ")))) }}
+{{ end }}
 {{ end }}
 
 <script type="application/ld+json">

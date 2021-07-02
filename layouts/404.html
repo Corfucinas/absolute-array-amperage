@@ -1,22 +1,44 @@
 <!DOCTYPE html>
-<html>
-    <head>
+<html amp lang="{{ with .Site.LanguageCode }}{{ . }}{{ else }}en-US{{ end }}" prefix="og: https://ogp.me/ns#">
+
+    <head itemscope itemtype="{{ .Site.BaseURL }}">
+
         <meta charset="utf-8">
         <meta name="robots" content="noindex" />
         <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+
+        {{ "<!--Favicon-->" | safeHTML }}
+        <link rel="shortcut icon" href="{{ .Site.BaseURL | safeURL }}images/favicon/favicon.ico">
+        <link rel="apple-touch-icon" sizes="180x180"
+            href="{{ .Site.BaseURL | safeURL }}images/favicon/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32"
+            href="{{ .Site.BaseURL | safeURL }}images/favicon/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16"
+            href="{{ .Site.BaseURL | safeURL }}images/favicon/favicon-16x16.png">
+        <link rel="manifest" href="{{ .Site.BaseURL | safeURL }}site.webmanifest">
+        <link rel="mask-icon" href="{{ .Site.BaseURL | safeURL }}images/favicon/safari-pinned-tab.svg" color="#5bbad5">
+        <meta name="msapplication-TileColor" content="#00aba9">
+        <meta name="msapplication-config" content="{{ .Site.BaseURL | safeURL }}browserconfig.xml">
+        <meta name="theme-color" content="#ffffff">
+
         <title>{{ i18n "notFound"}}</title>
+
         <style type="text/css">
-            html, body {
+            html,
+            body {
                 height: 100%;
             }
+
             body {
                 font-family: Courier New, sans-serif;
                 margin: 0;
             }
+
             h1 {
                 font-weight: bold;
                 font-size: 5em;
             }
+
             .flex-container {
                 height: 100%;
                 padding: 0;
@@ -30,16 +52,20 @@
                 justify-content: center;
                 flex-direction: column;
             }
+
             .flex-item {
                 text-align: center;
             }
+
             @media only screen and (max-width: 768px) {
                 h1 {
                     font-size: 3.5em;
                 }
             }
+
         </style>
     </head>
+
     <body>
         <main class="flex-container">
             <h1 class="flex-item">{{ i18n "notFound"}}</h1>
@@ -47,4 +73,5 @@
             <p class="flex-item"><a href="{{ "/" | absLangURL }}">{{ i18n "goBackHome" }}</a></p>
         </main>
     </body>
+
 </html>

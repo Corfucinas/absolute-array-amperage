@@ -1,9 +1,19 @@
 <!DOCTYPE html>
-<html ⚡ lang="{{.Site.LanguageCode}}">
-	<head>
+{{ "<!--[if lt IE 7]>      <html class='no-js lt-ie9 lt-ie8 lt-ie7'> <![endif]-->" | safeHTML }}
+{{ "<!--[if IE 7]>         <html class='no-js lt-ie9 lt-ie8'> <![endif]-->" | safeHTML }}
+{{ "<!--[if IE 8]>         <html class='no-js lt-ie9'> <![endif]-->" | safeHTML }}
+{{ "<!--[if gt IE 8]>      <html class='no-js'> <!--<![endif]-->" | safeHTML }}
+<html ⚡ lang="{{ with .Site.LanguageCode }}{{ . }}{{ else }}en-US{{ end }}" prefix="og: https://ogp.me/ns#">
+
+	<head itemscope itemtype="https://schema.org/WebPage">
 		{{- partial "head/base.html" . -}}
 	</head>
+
 	<body>
+		{{ " <!--[if lt IE 7]>" | safeHTML }}
+		{{ "<p class='browsehappy'>You are using an <strong>outdated</strong> browser." | safeHTML  }}
+		{{ "Please <a href='#'>upgrade your browser</a> to improve your experience.</p>" | safeHTML  }}
+		{{ "<![endif]-->" | safeHTML }}
 		{{- partial "page/auto-ads.html" . -}}
 		{{- partial "page/install-sw.html" . -}}
 		{{- partial "page/analytics.html" . -}}
@@ -18,7 +28,8 @@
 			{{- partial "footer/base.html" . -}}
 		</footer>
 		{{ if .IsPage }}
-			{{- partial "page/infinite-scroll.html" . -}}
+		{{- partial "page/infinite-scroll.html" . -}}
 		{{ end }}
 	</body>
+
 </html>

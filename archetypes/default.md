@@ -13,6 +13,8 @@ tags = []
 
 keywords = []
 
+categories = []
+
 [amp]
     elements = []
 

@@ -8,8 +8,32 @@
 {{- partial "head/pagination-metas.html" . -}}
 
 <meta name="description" content="{{if .IsHome}}{{ .Site.Params.Description }}{{else}}{{.Description}}{{end}}" />
-<link rel="canonical" href="{{ .Permalink }}" >
-<link rel="sitemap" href="{{ "sitemap.xml" | absURL }}" type="application/xml" />
+<link rel="canonical" href="{{ .Permalink }}">
+<link rel="sitemap" type="application/xml" title="Sitemap" href="{{ ;sitemap.xml' | absURL }}">
+
+{{ "<!--Search Engine Crawler Tags-->" | safeHTML }}
+<meta name="robots" content="index,follow">
+<meta name="googlebot" content="index,follow">
+
+{{ "<!-- RSS Feed -->" | safeHTML }}
+{{ with .OutputFormats.Get "RSS" }}
+<link href="{{ .Permalink }}" rel="alternate" type="application/rss+xml" title="{{ $.Site.Title }}">
+<link href="{{ .Permalink }}" rel="feed" type="application/rss+xml" title="{{ $.Site.Title }}">
+{{ end }}
+
+{{ "<!--Misc-->" | safeHTML }}
+<meta name="keywords"
+    content="coding, programming, knowledge, absolute array, absolute, array, python, learn, new skill">
+<meta name="imagemode" content="force">
+<meta name="coverage" content="Worldwide">
+<meta name="distribution" content="Global">
+<meta name="HandheldFriendly" content="True">
+<meta name="msapplication-tap-highlight" content="no">
+<meta name="apple-mobile-web-app-title" content="{{ .Site.Params.sitename }}">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-touch-fullscreen" content="yes">
+
 
 {{- partial "head/og-metas.html" . -}}
 
@@ -17,9 +41,75 @@
 
 {{- partial "head/pwa-metas.html" . -}}
 
-<style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes  -amp-start{from{visibility:hidden}to{visibility:visible}}</style>
+<style amp-boilerplate>
+    body {
+        -webkit-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+        -moz-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+        -ms-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+        animation: -amp-start 8s steps(1, end) 0s 1 normal both
+    }
+
+    @-webkit-keyframes -amp-start {
+        from {
+            visibility: hidden
+        }
+
+        to {
+            visibility: visible
+        }
+    }
+
+    @-moz-keyframes -amp-start {
+        from {
+            visibility: hidden
+        }
+
+        to {
+            visibility: visible
+        }
+    }
+
+    @-ms-keyframes -amp-start {
+        from {
+            visibility: hidden
+        }
+
+        to {
+            visibility: visible
+        }
+    }
+
+    @-o-keyframes -amp-start {
+        from {
+            visibility: hidden
+        }
+
+        to {
+            visibility: visible
+        }
+    }
+
+    @keyframes -amp-start {
+        from {
+            visibility: hidden
+        }
+
+        to {
+            visibility: visible
+        }
+    }
+
+</style>
 <noscript>
-    <style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style>
+    <style amp-boilerplate>
+        body {
+            -webkit-animation: none;
+            -moz-animation: none;
+            -ms-animation: none;
+            animation: none
+        }
+
+    </style>
 </noscript>
 
 {{- partial "head/styles.html" . -}}

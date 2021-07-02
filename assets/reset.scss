@@ -31,9 +31,9 @@ dd {
 
 /* Set core body defaults */
 body {
-  min-height: 100vh;
+  min-height     : 100vh;
   scroll-behavior: smooth;
-  text-rendering: optimizeSpeed;
+  text-rendering : optimizeSpeed;
 }
 
 /* Remove list styles on ul, ol elements with a class attribute */
@@ -50,7 +50,7 @@ a:not([class]) {
 /* Make images easier to work with */
 img {
   max-width: 100%;
-  display: block;
+  display  : block;
 }
 
 /* Inherit fonts for inputs and buttons */
