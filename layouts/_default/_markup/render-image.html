@@ -6,7 +6,7 @@
     {{ end }}
     {{ $resource := resources.Get .Destination }}
     {{ with $resource }}
-    {{ if in (slice "jpeg" "jpg" "png") $resource.MediaType.SubType }}
+    {{ if in (slice "jpeg" "jpg" "png" "webp" "webm") $resource.MediaType.SubType }}
     <amp-img src="{{ .Permalink | safeURL | absURL }}" srcset="{{ (.Resize "1200x").Permalink }} 1200w,
                     {{ (.Resize "900x").Permalink }} 900w,
                     {{ (.Resize "800x").Permalink }} 800w,
