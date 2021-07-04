@@ -1,12 +1,12 @@
 ---
 author:
-  - name: Pedro Torres
-  - homepage: https://absolutearray.com/
+  - name: ""
+  - homepage: ""
 
 title: "{{ replace .Name "-" " " | title }}"
 
-draft: true
 date: {{ .Date }}
+draft: true
 publishdate: "{{ .Date }}"
 description: ""
 summary: ""
@@ -44,14 +44,14 @@ ogp:
   image:
   site:
 
-twitter
+twitter:
     title: ""
     url: ""
     description: ""
     image: ""
     site: ""
 
-sitemap
+sitemap:
     changefreq: weekly
     priority: 0.5
     filename: sitemap.xml
