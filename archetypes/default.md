@@ -1,7 +1,7 @@
 ---
 author:
-  - name: ""
-  - homepage: ""
+  - name: Pedro Torres
+  - homepage: https://absolutearray.com/
 
 title: "{{ replace .Name "-" " " | title }}"
 
