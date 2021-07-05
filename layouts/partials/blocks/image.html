@@ -17,12 +17,14 @@
         height={{ with $.height }} "{{ . }}" {{ else }} {{ .Height }} {{ end }}
         layout={{ with $.layout }}"{{ . }}"{{else}}"responsive"{{ end }} {{ with $.alt }}alt="{{ . }}" {{ end }}
         class="figure__image {{ with $.class }}{{ . }}{{ end }} {{ with $.caption }}figure__image--with-caption{{ end }}">
+        <div fallback>Go online to see the image</div>
     </amp-img>
     {{ else }}
     <amp-img src="{{ .Permalink | absURL }}" width={{ with $.width }} "{{ . }}" {{ else }} {{ .Width }} {{ end }}
         height={{ with $.height }} "{{ . }}" {{ else }} {{ .Height }} {{ end }}
         layout={{ with $.layout }}"{{ . }}"{{else}}"responsive"{{ end }} {{ with $.alt }}alt="{{ . }}" {{ end }}
         class="figure__image {{ with $.class }}{{ . }}{{ end }} {{ with $.caption }}figure__image--with-caption{{ end }}">
+        <div fallback>Go online to see the image</div>
     </amp-img>
     {{ end }}
     {{ end }}

@@ -15,6 +15,7 @@
                     {{ (.Resize "320x webp").Permalink }} 320w
                 " width="{{ .Width }}" height="{{ .Height }}" layout="responsive" alt="{{ $.Text }}" {{ with $.Title}}
         title="{{ . }}" {{ end }} class="figure__image {{ with $.Title }}figure__image--with-caption{{ end }}">
+        <div fallback>Go online to see the image</div>
     </amp-img>
     {{ else if in (slice "gif") $resource.MediaType.SubType }}
     <amp-anim src="{{ .Permalink | safeURL | absURL }}" width="{{ .Width }}" height="{{ .Height }}" alt="{{ $.Text }}"
@@ -25,6 +26,8 @@
     {{ else }}
     <amp-img src="{{ .Destination | safeURL | absURL }}" height="1" width="1" layout="responsive" alt="{{ .Text }}"
         {{ with .Title}} title="{{ . }}" {{ end }}
-        class="figure__image {{ with .Title }}figure__image--with-caption{{ end }}"></amp-img>
+        class="figure__image {{ with .Title }}figure__image--with-caption{{ end }}">
+        <div fallback>Go online to see the image</div>
+    </amp-img>
     {{ end }}
 </figure>
