@@ -372,6 +372,10 @@ blockquote {
 .content {
 	width: 100%;
 
+	p {
+		text-align: justify;
+	}
+
 	&>* {
 		margin-top: 1.5em;
 	}
